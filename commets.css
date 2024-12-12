@@ -75,6 +75,8 @@
 }
 .data {
   font-size: 18px;
+  position: absolute;
+  left: 65%;
 }
 
 
@@ -136,13 +138,20 @@
 .likebutton {
   background: transparent;
   border:none;
-  padding-left: 24px;
+
 }
 
 .like{
  width: 24px;
  height: 24px;
- display: block;
+/*   left: 5%; */
+ /* display: block; */
+}
+.answer{
+ /*  position: absolute;
+  left: 15%; */
+  width: 24px;
+ height: 24px;
 }
 
 .likebutton:hover{
