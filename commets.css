@@ -3,17 +3,58 @@
     padding: 0;
   }
 
-   
+  body{
+    background: linear-gradient(to right top,#84fad7, #76f591 );
+  }
+  .allcontent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 24px;
+    padding-bottom: 64px;
+    min-height: 100vh;
+  }
+
   .comments {
     margin-top: 36px;
     margin-left: 36px;
+    width: 596px;
+    box-sizing: border-box;
+    background: radial-gradient(
+      75.42% 75.42% at 50% 42.37%,
+      rgba(53, 53, 53, 0) 22.92%,
+      #d948b9 100%
+    );
+    filter: drop-shadow(0px 20px 67px rgba(0, 0, 0, 0.08));
+    border-radius: 20px;
+    padding: 16px;
+  }
+  
+  .comment-box {
+    margin-top: 36px;
+    margin-left: 36px;
+    width: 596px;
+    box-sizing: border-box;
+    background: radial-gradient(
+      75.42% 75.42% at 50% 42.37%,
+      rgba(53, 53, 53, 0) 22.92%,
+      #d948b9 100%
+    );
+    filter: drop-shadow(0px 20px 67px rgba(0, 0, 0, 0.08));
+    border-radius: 20px;
   }
 
-  .text {
-    margin-left: 36px;
+  .comment-box-content {
+    padding: 20px;
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+   
   }
 
 .title {
+    display: flex;
+    justify-content: center;
     font-size: 48px;
     font-weight: 400;
     line-height: 32px;
@@ -21,20 +62,35 @@
     color: #202027;
     margin-top: 36px;
     margin-left: 36px;
-    padding-bottom: 24px;
+    padding-bottom: 24px; 
 }
 
-.button {
-    width: 247px;
-    height: 66px;
+.name {
+  font-size: 16px;
+    font-family: Helvetica;
+    border-radius: 8px;
+    border: none;
+    width: 300px;
+    padding: 11px 22px;
+}
+.data {
+  font-size: 18px;
+  position: absolute;
+  left: 65%;
+}
+
+
+
+.comment-box-button {
+    width: 300px;
+    height: 60px;
     padding: 16px 28px 16px 28px;
     gap: 10px;
-    border-radius: 12px;
+    border-radius: 8px;
     border: 1px solid #202027;
     opacity: 0px;
     font-size: 16px;
-    font-weight: 200;
-    line-height: 34px;
+    font-weight: 200px;
     text-align: center;
     background-color: #202027;
     color: #FFFFFF;
@@ -44,7 +100,7 @@
 
 
 
-.name{
+.comment-box-name{
     font-size: 24px;
     font-weight: 400;
     line-height: 32px;
@@ -52,6 +108,16 @@
     color: #202027;
     padding-bottom: 12px;
 }
+.comment-box-text {
+  font-size: 16px;
+    font-family: Helvetica;
+    border-radius: 8px;
+    border: none;
+    margin-top: 12px;
+    padding: 22px;
+    resize: none;
+}
+
 
 .comment {
     font-size: 24px;
@@ -59,7 +125,7 @@
     line-height: 32px;
     text-align: left;
     color: #202027;
-    padding-bottom: 12px;
+    padding: 8px;
 }
 
 .count{
@@ -72,17 +138,21 @@
 .likebutton {
   background: transparent;
   border:none;
+
 }
 
 .like{
  width: 24px;
  height: 24px;
- display: block;
+/*   left: 5%; */
+ /* display: block; */
 }
-.adlike {
-  background: red;
+.answer{
+ /*  position: absolute;
+  left: 15%; */
+  width: 24px;
+ height: 24px;
 }
-
 
 .likebutton:hover{
   cursor: pointer;
