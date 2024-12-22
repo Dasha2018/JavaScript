@@ -79,11 +79,11 @@ addCommentButton.addEventListener('click', (event) => {
   const name = nameInput.value.trim();
   const commentText = commentInput.value.trim();
 
-  if (name === '' || commentText  === '') {
+  if (name === '' || commentText === '') {
     alert('Пожалуйста, заполните оба поля!');
     return;
   }
-  
+
   // Добавляем новый комментарий в массив
   comments.push({
     name,
