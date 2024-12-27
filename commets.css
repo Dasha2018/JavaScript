@@ -4,7 +4,7 @@
   }
 
   body{
-    background: linear-gradient(to right top,#84fad7, #76f591 );
+    background: linear-gradient(to right top,#1ce8e8, #76f591 );
   }
   .allcontent {
     display: flex;
@@ -70,13 +70,11 @@
     font-family: Helvetica;
     border-radius: 8px;
     border: none;
-    width: 300px;
+    width: 400px;
     padding: 11px 22px;
 }
 .data {
   font-size: 18px;
-  position: absolute;
-  left: 65%;
 }
 
 
@@ -139,6 +137,18 @@
   background: transparent;
   border:none;
 
+}
+
+.answerbutton {
+  background: transparent;
+  border:none;
+  padding-left: 8px;
+}
+
+.answer{
+  width: 24px;
+ height: 24px;
+ display: block;
 }
 
 .like{
