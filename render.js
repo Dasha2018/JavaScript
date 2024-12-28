@@ -15,8 +15,6 @@ export function renderComments() {
             <h3 class="name">${coment.name}</h3>
             <p class="comment">${coment.comment}</p>
             <div class="count">
-              
-                
                 <button class="likebutton" data-index="${index}" >
                     <svg  class="like ${coment.liked.state ? 'liked' : ''}"
                     fill="${coment.liked.state ? '#76f591' : '#545254'}"
