@@ -5,3 +5,4 @@ import { setupAddCommentHandler } from './handlers.js';
 // Инициализация приложения
 renderComments();
 setupAddCommentHandler();
+

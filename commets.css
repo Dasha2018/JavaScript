@@ -75,6 +75,7 @@
 }
 .data {
   font-size: 18px;
+  padding-left: 340px; 
 }
 
 
@@ -136,14 +137,10 @@
 .likebutton {
   background: transparent;
   border:none;
-
+ padding-left: 8px;
 }
 
-.answerbutton {
-  background: transparent;
-  border:none;
-  padding-left: 8px;
-}
+
 
 .answer{
   width: 24px;
