@@ -17,7 +17,7 @@ export function addComment(name, text) {
 
 export function toggleLike(index) {
     const comment = comments[index]
-    
+
     comment.liked.state = !comment.liked.state
     comment.liked.counter += comment.liked.state ? 1 : -1
 }
