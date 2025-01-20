@@ -17,6 +17,7 @@ export function setupAddCommentHandler(renderComments) {
         document.querySelector('.comment-loading').style.display = 'block'
         document.querySelector('.comment-box-content').style.display = 'none'
 
+
         postComment(
             sanitizeInput(commentInput.value.trim()),
             sanitizeInput(nameInput.value.trim()),
@@ -54,6 +55,20 @@ export function setupAddCommentHandler(renderComments) {
                     }, 2000)
                 }
             })
+
+
+        postComment(
+            sanitizeInput(commentInput.value.trim()),
+            sanitizeInput(nameInput.value.trim()),
+        ).then((data) => {
+            document.querySelector('.comment-loading').style.display = 'none'
+            document.querySelector('.comment-box-content').style.display = 'flex'
+            updateComments(data)
+            renderComments()
+            nameInput.value = ''
+            commentInput.value = ''
+        })
+
     })
 }
 

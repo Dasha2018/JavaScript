@@ -33,6 +33,7 @@ export const postComment = (text, name) => {
         body: JSON.stringify({
             text,
             name,
+
             forceError: true,
         }),
     })
@@ -50,4 +51,10 @@ export const postComment = (text, name) => {
         .then(() => {
             return fetchComments()
         })
+
+        }),
+    }).then(() => {
+        return fetchComments()
+    })
+
 }

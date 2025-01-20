@@ -40,8 +40,10 @@ export function renderComments() {
             if (typeof index === 'undefined') return
 
             toggleLike(index)
+
             renderComments()
         })
     })
+
     enableCommentReplyFeature()
 }

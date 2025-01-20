@@ -174,7 +174,11 @@ body {
 }
 .answer {
     /*  position: absolute;
+
 left: 15%; */
+
+  left: 15%; */
+
     width: 24px;
     height: 24px;
 }
@@ -185,8 +189,11 @@ left: 15%; */
 .counter {
     font-size: 24px;
 }
+
 .-error {
     border: 1px solid red;
     background-color: #ffe6e6;
     transition: border 0.2s ease-in-out;
 }
+
+
