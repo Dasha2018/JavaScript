@@ -1,27 +1,33 @@
 import { sanitizeInput } from './utils.js'
-import { addComment } from './data.js'
-import { renderComments } from './render.js'
+import { updateComments } from './data.js'
 import { comments } from './data.js'
+import { postComment } from './api.js'
 
-export function setupAddCommentHandler() {
+export function setupAddCommentHandler(renderComments) {
     const nameInput = document.getElementById('name')
     const commentInput = document.getElementById('comment-box-text')
     const addCommentButton = document.getElementById('comment-box-button')
 
     addCommentButton.addEventListener('click', (event) => {
         event.preventDefault()
-        const name = sanitizeInput(nameInput.value.trim())
-        const commentText = sanitizeInput(commentInput.value.trim())
-
-        if (!name || !commentText) {
+        if (!nameInput.value || !commentInput) {
             alert('Пожалуйста, заполните оба поля!')
             return
         }
+        document.querySelector('.comment-loading').style.display = 'block'
+        document.querySelector('.comment-box-content').style.display = 'none'
 
-        addComment(name, commentText)
-        nameInput.value = ''
-        commentInput.value = ''
-        renderComments()
+        postComment(
+            sanitizeInput(commentInput.value.trim()),
+            sanitizeInput(nameInput.value.trim()),
+        ).then((data) => {
+            document.querySelector('.comment-loading').style.display = 'none'
+            document.querySelector('.comment-box-content').style.display = 'flex'
+            updateComments(data)
+            renderComments()
+            nameInput.value = ''
+            commentInput.value = ''
+        })
     })
 }
 
