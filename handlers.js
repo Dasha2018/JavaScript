@@ -22,7 +22,8 @@ export function setupAddCommentHandler(renderComments) {
             sanitizeInput(nameInput.value.trim()),
         ).then((data) => {
             document.querySelector('.comment-loading').style.display = 'none'
-            document.querySelector('.comment-box-content').style.display = 'flex'
+            document.querySelector('.comment-box-content').style.display =
+                'flex'
             updateComments(data)
             renderComments()
             nameInput.value = ''
