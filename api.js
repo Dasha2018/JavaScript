@@ -35,7 +35,19 @@ export const postComment = (text, name) => {
             name,
             forceError: true,
         }),
-    }).then(() => {
-        return fetchComments()
     })
+        .then((response) => {
+            if (response.status === 500) {
+                throw new Error('Сервер сломался, попробуй позже')
+            }
+            if (response.status === 400) {
+                throw new Error('Неверный запрос')
+            }
+            if (response.status === 201) {
+                return response.json()
+            }
+        })
+        .then(() => {
+            return fetchComments()
+        })
 }
