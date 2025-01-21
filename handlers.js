@@ -17,6 +17,46 @@ export function setupAddCommentHandler(renderComments) {
         document.querySelector('.comment-loading').style.display = 'block'
         document.querySelector('.comment-box-content').style.display = 'none'
 
+
+        postComment(
+            sanitizeInput(commentInput.value.trim()),
+            sanitizeInput(nameInput.value.trim()),
+        )
+            .then((data) => {
+                document.querySelector('.comment-loading').style.display =
+                    'none'
+                document.querySelector('.comment-box-content').style.display =
+                    'flex'
+                updateComments(data)
+                renderComments()
+                nameInput.value = ''
+                commentInput.value = ''
+            })
+            .catch((error) => {
+                document.querySelector('.comment-loading').style.display =
+                    'none'
+                document.querySelector('.comment-box-content').style.display =
+                    'flex'
+                if (error.message === 'Failed to fetch at postComment') {
+                    alert('Кажется, у вас сломался интернет, попробуйте позже')
+                }
+                if (error.message === 'Сервер сломался, попробуй позже') {
+                    alert('Сервер сломался, попробуй позже')
+                }
+
+                if (error.message === 'Неверный запрос') {
+                    alert('Имя и комментарий должны быть не короче 3 символов')
+                    nameInput.classList.add('-error')
+                    commentInput.classList.add('-error')
+
+                    setTimeout(() => {
+                        nameInput.classList.remove('-error')
+                        commentInput.classList.remove('-error')
+                    }, 2000)
+                }
+            })
+
+
         postComment(
             sanitizeInput(commentInput.value.trim()),
             sanitizeInput(nameInput.value.trim()),
@@ -28,6 +68,7 @@ export function setupAddCommentHandler(renderComments) {
             nameInput.value = ''
             commentInput.value = ''
         })
+
     })
 }
 
